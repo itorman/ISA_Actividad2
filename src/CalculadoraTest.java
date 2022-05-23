@@ -5,16 +5,17 @@ import static org.junit.Assert.*;
 public class CalculadoraTest {
 
     private static final double DELTA = 1e-2;
+
     public static void main(String args[]) {
-        
+
         testSuma();
         testResta();
         testMultiplicacion();
         testDivision();
         testDivision();
-        testExponencial();
     }
-    @Test  //test case
+    
+    @Test //test case
     public static void testSuma() {
         Calculadora calc = new Calculadora();
         double[][] cases = { { 1.0, 3.4, 4.4 }, { 3.8, 4, 7.8 }, { 3, 0, 3 } };
@@ -35,7 +36,8 @@ public class CalculadoraTest {
             }
         }
     }
-    @Test  //test case
+
+    @Test //test case
     public static void testResta() {
         Calculadora calc = new Calculadora();
         double[][] cases = { { 5.0, 3.4, 1.6 }, { 3.8, 4, -0.2 }, { 0, 0.0, 0.0 } };
@@ -54,7 +56,8 @@ public class CalculadoraTest {
             }
         }
     }
-    @Test  //test case
+
+    @Test //test case
     public static void testMultiplicacion() {
         Calculadora calc = new Calculadora();
         double[][] cases = { { 5.0, 3, 15.0 }, { 3.8, -4, -15.2 }, { 0, 8, 0 } };
@@ -73,7 +76,8 @@ public class CalculadoraTest {
             }
         }
     }
-    @Test  //test case
+
+    @Test //test case
     public static void testDivision() {
         Calculadora calc = new Calculadora();
         double[][] cases = { { 45, 3.4, 13.235 }, { 8, -2, -4 }, { 0, 9, 0 } };
@@ -92,6 +96,7 @@ public class CalculadoraTest {
             }
         }
     }
+
     @Ignore //test case ignore and will not execute
     public static void testRaiz() {
         Calculadora calc = new Calculadora();
@@ -111,23 +116,5 @@ public class CalculadoraTest {
             }
         }
     }
-    @Ignore //test case ignore and will not execute
-    public static void testExponencial() {
-        Calculadora calc = new Calculadora();
-        double[][] cases = { { 5, 148.413 }, { -6, 0.002 }, { 0, 1 } };
-        double resultado;
-        double exponencial;
-        for (int i = 0; i < cases.length; i++) {
-            // arrange
-            resultado = cases[i][1];
-            // act
-            exponencial = calc.raiz(cases[i][0]);
-            // assert
-            if (exponencial == resultado) {
-                System.out.println("Test exponencial OK en el caso " + i);
-            } else {
-                System.out.println("Error en el test caso " + i);
-            }
-        }
-    }
 }
+    
