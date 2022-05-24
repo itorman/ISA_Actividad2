@@ -12,7 +12,7 @@ public class CalculadoraTest {
         testResta();
         testMultiplicacion();
         testDivision();
-        testDivision();
+        testRaiz();
     }
     
     @Test //test case
@@ -97,7 +97,7 @@ public class CalculadoraTest {
         }
     }
 
-    @Ignore //test case ignore and will not execute
+    @Test //test case ignore and will not execute
     public static void testRaiz() {
         Calculadora calc = new Calculadora();
         double[][] cases = { { 45, 6.708 }, { 36, 6 }, { 85, 9.219 } };
