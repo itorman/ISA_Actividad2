@@ -27,13 +27,9 @@ public class CalculadoraTest {
             // act
             suma = calc.suma(cases[i][0], cases[i][1]);
             // assert
-            //assert suma == resultado : "Error en la suma"; otra opcion con assert
+            assert suma == resultado : "Error en la suma"; //otra opcion con assert
             //assertEquals(resultado, suma, DELTA); //otra opcion con assert
-            if (suma == resultado) {
-                System.out.println("Test suma OK en caso " + i);
-            } else {
-                System.out.println("Error en el test caso " + i);
-            }
+            
         }
     }
 
@@ -49,11 +45,7 @@ public class CalculadoraTest {
             // act
             resta = calc.resta(cases[i][0], cases[i][1]);
             // assert
-            if (resta == resultado) {
-                System.out.println("Test resta OK en caso " + i);
-            } else {
-                System.out.println("Error en el test caso " + i);
-            }
+            assert resta == resultado : "Error en la resta";
         }
     }
 
@@ -69,11 +61,7 @@ public class CalculadoraTest {
             // act
             multiplicacion = calc.multiplica(cases[i][0], cases[i][1]);
             // assert
-            if (multiplicacion == resultado) {
-                System.out.println("Test multiplicacion OK en el caso " + i);
-            } else {
-                System.out.println("Error en el test caso " + i);
-            }
+            assert multiplicacion == resultado : "Error en la multiplicacion";
         }
     }
 
@@ -89,15 +77,11 @@ public class CalculadoraTest {
             // act
             division = calc.division(cases[i][0], cases[i][1]);
             // assert
-            if (division == resultado) {
-                System.out.println("Test division OK en el caso " + i);
-            } else {
-                System.out.println("Error en el test caso " + i);
-            }
+            assert division == resultado : "Error en la division";
         }
     }
 
-    @Ignore //test case ignore and will not execute
+    @Test //test case ignore and will not execute
     public static void testRaiz() {
         Calculadora calc = new Calculadora();
         double[][] cases = { { 45, 6.708 }, { 36, 6 }, { 85, 9.219 } };
@@ -109,11 +93,7 @@ public class CalculadoraTest {
             // act
             raiz = calc.raiz(cases[i][0]);
             // assert
-            if (raiz == resultado) {
-                System.out.println("Test raiz OK en el caso " + i);
-            } else {
-                System.out.println("Error en el test caso " + i);
-            }
+            assert raiz == resultado : "Error en la raiz";
         }
     }
 }
