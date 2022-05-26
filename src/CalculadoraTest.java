@@ -41,7 +41,7 @@ public class CalculadoraTest {
     @Test //test case
     public static void testResta() {
         Calculadora calc = new Calculadora();
-        double[][] cases = { { 5, 3.4, 1.6 }, { 3.8, 4, -0.2 }, { 0, 0.0, 0.0 } };
+        double[][] cases = { { 5, 3.4, 1.6 }, { 3.865, 4,-0.135 }, { 0,  0.0, 0.0 } };
         double resultado;
         double resta;
         for (int i = 0; i < cases.length; i++) {
@@ -54,7 +54,7 @@ public class CalculadoraTest {
             System.out.println(resta);
             System.out.println(resultado);
             //assertEquals(resultado, resta, DELTA); // PUEDE SER UNA OPCION??
-            if (resta == resultado) { 
+            if (Math.abs(resta-resultado)<0.001) { 
                 System.out.println("Test resta OK en caso " + i);
             } else {
                 System.out.println("Error en el test caso " + i);
@@ -85,7 +85,7 @@ public class CalculadoraTest {
     @Test //test case
     public static void testDivision() {
         Calculadora calc = new Calculadora();
-        double[][] cases = { { 45, 3.4, 13.235 }, { 8, -2, -4 }, { 0, 9, 0 } };
+        double[][] cases = { { 45, 3.4, 13.2352 }, { 8, -2, -4 }, { 0, 9, 0 } };
         double resultado;
         double division;
         for (int i = 0; i < cases.length; i++) {
@@ -97,7 +97,7 @@ public class CalculadoraTest {
             // error de falso negativo en el primer caso por redondeo
             //System.out.println(division);
             //System.out.println(resultado);
-            if (division == resultado) {
+            if (Math.abs(division-resultado)<0.001) {
                 System.out.println("Test division OK en el caso " + i);
             } else {
                 System.out.println("Error en el test caso " + i);
@@ -120,7 +120,7 @@ public class CalculadoraTest {
             // error falso negativo en primero y segundo caso por redondeo
             //System.out.println(raiz);
             //System.out.println(resultado);
-            if (raiz == resultado) {
+            if (Math.abs(raiz-resultado)<0.001) {
                 System.out.println("Test raiz OK en el caso " + i);
             } else {
                 System.out.println("Error en el test caso " + i);
