@@ -29,6 +29,7 @@ public class CalculadoraTest {
             // assert
             //assert suma == resultado : "Error en la suma"; otra opcion con assert
             //assertEquals(resultado, suma, DELTA); //otra opcion con assert
+           
             if (suma == resultado) {
                 System.out.println("Test suma OK en caso " + i);
             } else {
@@ -40,7 +41,7 @@ public class CalculadoraTest {
     @Test //test case
     public static void testResta() {
         Calculadora calc = new Calculadora();
-        double[][] cases = { { 5.0, 3.4, 1.6 }, { 3.8, 4, -0.2 }, { 0, 0.0, 0.0 } };
+        double[][] cases = { { 5, 3.4, 1.6 }, { 3.8, 4, -0.2 }, { 0, 0.0, 0.0 } };
         double resultado;
         double resta;
         for (int i = 0; i < cases.length; i++) {
@@ -49,7 +50,11 @@ public class CalculadoraTest {
             // act
             resta = calc.resta(cases[i][0], cases[i][1]);
             // assert
-            if (resta == resultado) {
+            //segundo test da falso negativo por redondeo 
+            System.out.println(resta);
+            System.out.println(resultado);
+            //assertEquals(resultado, resta, DELTA); // PUEDE SER UNA OPCION??
+            if (resta == resultado) { 
                 System.out.println("Test resta OK en caso " + i);
             } else {
                 System.out.println("Error en el test caso " + i);
@@ -89,6 +94,9 @@ public class CalculadoraTest {
             // act
             division = calc.division(cases[i][0], cases[i][1]);
             // assert
+            // error de falso negativo en el primer caso por redondeo
+            //System.out.println(division);
+            //System.out.println(resultado);
             if (division == resultado) {
                 System.out.println("Test division OK en el caso " + i);
             } else {
@@ -109,6 +117,9 @@ public class CalculadoraTest {
             // act
             raiz = calc.raiz(cases[i][0]);
             // assert
+            // error falso negativo en primero y segundo caso por redondeo
+            //System.out.println(raiz);
+            //System.out.println(resultado);
             if (raiz == resultado) {
                 System.out.println("Test raiz OK en el caso " + i);
             } else {
