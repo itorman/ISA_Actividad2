@@ -1,4 +1,5 @@
-public class Calculadora{
+public class Calculadora {
+    
     public double suma(double a, double b){
         return a+b;
     }
@@ -39,4 +40,5 @@ public class Calculadora{
         }
         return raiz(X, low, mid);
     }
+
 }
